@@ -20,6 +20,16 @@ Route::get(
     'Auth\ActivationController@activate'
 )->name('account.activate');
 
+Route::get(
+    'account/activation/request',
+    'Auth\ActivationController@request'
+)->name('account.activation.request');
+
+Route::post(
+    'account/resend/activation',
+    'Auth\ActivationController@resend'
+)->name('account.activation.resend');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
